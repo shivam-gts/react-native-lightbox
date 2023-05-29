@@ -1,6 +1,6 @@
 import React, { Component,  Children, cloneElement } from 'react';
 import PropTypes from 'prop-types';
-import { Animated, TouchableHighlight, View } from 'react-native';
+import { Animated, TouchableHighlight, View,TouchableOpacity } from 'react-native';
 
 import LightboxOverlay from './LightboxOverlay';
 
@@ -127,13 +127,13 @@ export default class Lightbox extends Component {
         onLayout={() => {}}
       >
         <Animated.View style={{opacity: this.state.layoutOpacity}}>
-          <TouchableHighlight
+          <TouchableOpacity
             underlayColor={this.props.underlayColor}
             onPress={this.open}
             onLongPress={this.props.onLongPress}
           >
             {this.props.children}
-          </TouchableHighlight>
+          </TouchableOpacity>
         </Animated.View>
         {this.props.navigator ? false : <LightboxOverlay {...this.getOverlayProps()} />}
       </View>
