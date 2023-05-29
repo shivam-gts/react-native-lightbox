@@ -126,8 +126,9 @@ export default class Lightbox extends Component {
         style={this.props.style}
         onLayout={() => {}}
       >
-        <Animated.View style={{opacity: this.state.layoutOpacity}}>
+        <Animated.View style={{opacity: this.state.layoutOpacity,flex:1}} >
           <TouchableOpacity
+          style={{flex:1}}
             underlayColor={this.props.underlayColor}
             onPress={this.open}
             onLongPress={this.props.onLongPress}
